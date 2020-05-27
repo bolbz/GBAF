@@ -9,3 +9,11 @@ function listPartners()
 
     require('views/homeView.php');
 }
+
+function partner()
+{
+    $partnerManager = new PartnerManager();
+    $partner = $partnerManager->getPartner($_GET['id']);
+
+    require('views/partnerView.php');
+}

@@ -10,4 +10,14 @@ class PartnerManager extends Connection
 
         return $req;
     }
+
+    public function getPartner($partnerId) 
+    {
+        $db = $this->dbConnect();
+        $req = $db->prepare('SELECT id, name, content, logo FROM partners WHERE id= ? ');
+        $req->execute(array($partnerId));
+        $partner = $req->fetch();
+
+        return $partner;
+    }
 }
