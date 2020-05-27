@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <?php
           if($style == 'Home') {
-            echo '<link rel="stylesheet" href="public/css/homeView.css" media="screen" type="text/css" /> ';
+            echo '<link rel="stylesheet" href="public/css/home.css" media="screen" type="text/css" /> ';
           }
           else {
             echo '<link rel="stylesheet" href="/public/css/home.php" media="screen" type="text/css" />';

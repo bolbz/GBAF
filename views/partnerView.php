@@ -6,9 +6,10 @@
         <div class="container-fluid">
             <div class="card mb-3">
                 <div class="text-center">
-                    <img src="<?= htmlspecialchars($partner['logo']) ?> class="card-img-top" alt="...">
+                    <img src="<?= htmlspecialchars($partner['logo']) ?>" class="card-img-top" alt="...">
                 </div>
                 <div class="card-body">
+                    <p><a href="index.php" class="btn btn-danger"><-- Retour à la liste des partenaire.</a></p>
                     <h2 class="card-title">
                         <?= htmlspecialchars($partner['name']) ?>
                     </h2>

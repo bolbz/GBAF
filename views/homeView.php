@@ -47,7 +47,7 @@
         </p>
       </div>
     </div>
-    <div class="firmalar">
+    <div class="partners">
       <div class="container-fluid">
         <div class="row">
 
@@ -57,13 +57,14 @@
             while ($data = $partners->fetch())
             {
               ?>
-              <div class="firma-card row">
+              <div class="partner-card row">
               <div class="col-md-5 img-padding-no">
-                <div class="firma-resim" style="background-image: url('<?= htmlspecialchars($data['logo']) ?>')">
+                <div class="partner-logo">
+                  <img src="<?= htmlspecialchars($data['logo']) ?>" alt=" <?= htmlspecialchars($data['name']) ?>">
                 </div>
               </div>
               <div class="col-md-7">
-                <div class="firma-aciklama card-body">
+                <div class="partner-description card-body">
                   <h3>
                   <?= htmlspecialchars($data['name']) ?>
                   </h3>
@@ -76,16 +77,17 @@
                 </div>
               </div>
             </div>
+            <?php
+            }
+            $partners->closeCursor();
+            ?>
           </div>
           <div class="col-md-2"></div>
         </div>
       </div>
     </div>
   </section>
-              <?php
-            }
-            $partners->closeCursor();
-            ?>
+ 
   <?php $content = ob_get_clean(); ?>
 
   <?php require('template.php'); ?>

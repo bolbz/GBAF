@@ -2,6 +2,7 @@
 
 require('controllers/PartnerController.php');
 
+
 try
 {
     if(isset($_GET['action'])) {
