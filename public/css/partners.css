@@ -1,0 +1,39 @@
+body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 22px;
+}
+.card-img-top {
+    width: 90%;
+    height: 30%;
+    border: 2px solid red;
+    margin-top: 10px;
+}
+
+@media (min-width: 768px) {
+.card-img-top {
+    width: 50%;
+    height: 20%;
+    border: 2px solid red;
+    margin-top: 20px;
+}
+}
+
+.container-fluid {
+    border: 2px solid red;
+    margin-bottom: 20px;
+    width: 85%;
+}
+
+@media (max-width: 768px) {
+    button {
+        height: 50px;
+    }
+    .container-fluid {
+        width: auto;
+    }
+}
+
+.list-group-item {
+    border: 1px solid red;
+    border-radius: 2px;
+}

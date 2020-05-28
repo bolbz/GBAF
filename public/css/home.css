@@ -43,3 +43,14 @@
     height: 100%;
     width: 100%;
   }
+
+  body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 22px;
+}
+@media (min-width: 1024px) {
+.enterprise {
+  width: 85%;
+  margin: auto;
+}
+}

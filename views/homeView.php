@@ -36,7 +36,7 @@
 </section>
 
   <!--section entreprises-->
-  <section>
+  <section class="enterprise">
     <div class="card border-light mb-3">
       <div class="card-header">
         <h2>Nos Partenaires</h2>

@@ -1,4 +1,5 @@
 <?php $title = htmlspecialchars($partner['name']); ?>
+<?php $style = 'Partner'; ?>
 
 <?php ob_start(); ?>
 
@@ -9,7 +10,7 @@
                     <img src="<?= htmlspecialchars($partner['logo']) ?>" class="card-img-top" alt="...">
                 </div>
                 <div class="card-body">
-                    <p><a href="index.php" class="btn btn-danger"><-- Retour à la liste des partenaire.</a></p>
+                    <p><a href="index.php" class="btn btn-outline-danger"><-- Retour à la liste des partenaire.</a></p>
                     <h2 class="card-title">
                         <?= htmlspecialchars($partner['name']) ?>
                     </h2>
@@ -28,13 +29,13 @@
                     <div class="btn-toolbar justify-content-between" role="toolbar"
                         aria-label="Toolbar with button groups">
                         <div class="input-group">
-                            <h3>X COMMENTAIRE</h3>
+                            <h5>X COMMENTAIRE</h5>
                         </div>
                         <div class="btn-group" role="group" aria-label="First group">
                             <button type="button" class="btn btn-primary mr-4">Nouveau commentaire</button>
-                            <button type="button" class="btn btn-success mr-1">3 <i style="font-size:24px"
+                            <button type="button" class="btn btn-success mr-1">3 <i style="font-size:20px"
                                     class="fa">&#xf087;</i></button>
-                            <button type="button" class="btn btn-danger">4 <i style="font-size:24px"
+                            <button type="button" class="btn btn-danger">4 <i style="font-size:20px"
                                     class="fa">&#xf088;</i></button>
                         </div>
 
@@ -44,8 +45,8 @@
                     <div class="list-group">
                         <div class="list-group-item list-group-item-action">
                             <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1">Prénom : Unny</h5>
-                                <small>3 days ago</small>
+                                <h5 class="mb-1"><strong>Prénom : </strong> Unny</h5>
+                                <small><strong>3 days ago</strong></small>
                             </div>
                             <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget
                                 risus varius blandit.</p>
