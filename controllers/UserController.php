@@ -13,11 +13,24 @@ function newUser( $name, $lastname, $username, $password, $question, $answer)
     }
     else {
         require('views/connection.php');
-
     }
-
 }
-        function affichage(){
 
-            require('views/register.php');
-        }
+function login($username, $password)
+{
+    $userManager = new UserManager();
+    
+    $loginUser = $userManager->login($username, $password);
+
+    if($loginUser == false) {
+        Header('Location: index.php');
+    }
+    else{
+        Header('Location: index.php?action=listPartners');
+    }
+}
+
+function affichage()
+{
+    require('views/connection.php');
+}

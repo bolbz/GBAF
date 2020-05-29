@@ -5,7 +5,7 @@
 
 <div class="container-fluid text-center">
         <form class="form-signin" method="post" action="index.php?action=register">
-            <img class="mb-4" src="logo.png" alt="logo-GBAF">
+            <img class="mb-4" src="public/images/logo.png" alt="logo-GBAF">
             <h1 class="h3 mb-3 font-weight-normal">Connexion</h1>
 
             <label for="inputName" class="sr-only">Nom</label>

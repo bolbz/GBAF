@@ -31,7 +31,7 @@
             pouvoirs publics.
           </p>
      </div>
-      <img src="url('../public/images/Dsa_france.png')" class="card-img-top" alt="image_header">
+      <img src="public/images/logo.png" class="card-img-top" alt="image_header">
    </div>
 </section>
 

@@ -34,6 +34,13 @@ class UserManager extends Connection
     public function login($username, $password)
     {
         $db=$this->dbConnect();
- 
+        $req= $db->prepare('SELECT * FROM users WHERE username=?');
+         $req->execute(array($username));
+         $login = $req->fetch(PDO::FETCH_ASSOC);
+
+         if(password_verify($password, $login['password'])) {
+
+             return $login;
+         }
     }
 }
