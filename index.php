@@ -29,9 +29,12 @@ try
         elseif($_GET['action'] == 'logout') {
             session_start();
             session_destroy();
-            affichage();
+            connect();
         }
         elseif($_GET['action'] == 'register') {
+            register();
+        }
+        elseif($_GET['action'] == 'registerUser') {
             if(!empty($_POST['name']) && !empty($_POST['lastname']) && !empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['question']) && !empty($_POST['answer'])) {
                 newUser($_POST['name'], $_POST['lastname'], $_POST['username'], $_POST['password'] ,$_POST['question'], $_POST['answer']);
             }
@@ -41,7 +44,7 @@ try
         }
     }
     else{
-      affichage();
+      connect();
 
     }
 }

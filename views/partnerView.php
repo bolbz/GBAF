@@ -35,7 +35,7 @@
                     <div class="btn-toolbar justify-content-between" role="toolbar"
                         aria-label="Toolbar with button groups">
                         <div class="input-group">
-                            <h5>X COMMENTAIRE</h5>
+                            <h5>X COMMENTAIRES</h5>
                         </div>
                         <div class="btn-group" role="group" aria-label="First group">
                             <button type="button" class="btn btn-primary mr-4">Nouveau commentaire</button>

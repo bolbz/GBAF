@@ -3,13 +3,16 @@ require_once('models/UserManager.php');
 
 function newUser( $name, $lastname, $username, $password, $question, $answer) 
 {
+    $error = 'le nom utilisateur existe déjà';
     $userManager= new UserManager();
 
     $addUser = $userManager->registerUser($name, $lastname, $username, $password, $question, $answer);
     $user = $userManager->findUserUsername($username);
 
     if($addUser === false || $addUser == $user ) {
-        throw new Exception('Impossible de créer un compte');
+       session_start();
+       $_SESSION['error']= $error;
+       Header('Location: index.php?action=register');
     }
     else {
         require('views/connection.php');
@@ -30,8 +33,12 @@ function login($username, $password)
     }
 }
 
-function affichage()
+function connect()
 {
     require('views/connection.php');
 }
 
+function register() 
+{
+    require('views/register.php');
+}

@@ -8,7 +8,7 @@
 <?php ob_start(); ?>
 
 <section>
-  <?= include_once'header.php';?>
+  <?php include_once'header.php';?>
 </section>
 
 <section>
@@ -37,7 +37,7 @@
             pouvoirs publics.
           </p>
      </div>
-      <img src="public/images/logo.png" class="card-img-top" alt="image_header">
+      <img src="public/images/bannierre.jpg" class="card-img-top" alt="image_header" style="height:200px;">
    </div>
 </section>
 
@@ -48,8 +48,9 @@
         <h2>Nos Partenaires</h2>
       </div>
       <div class="card-body">
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.
+        <p class="card-text">
+          Afin de vous renseigner au mieux, GBAF vous propose une liste de partenaires qui 
+          répertorie un grand nombre d'informations sur les produits et les services bancaires et financiers.
         </p>
       </div>
     </div>

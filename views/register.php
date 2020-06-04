@@ -1,12 +1,20 @@
+<?php session_start(); ?>
 <?php $title='Inscription' ; ?>
 <?php $style ='Connect' ; ?>
 
 <?php ob_start() ?>
 
 <div class="container-fluid text-center">
-        <form class="form-signin" method="post" action="index.php?action=register">
+        <form class="form-signin" method="post" action="index.php?action=registerUser">
             <img class="mb-4" src="public/images/logo.png" alt="logo-GBAF">
-            <h1 class="h3 mb-3 font-weight-normal">Connexion</h1>
+            <h1 class="h3 mb-3 font-weight-normal">Inscription</h1>
+
+            <?php
+                    if(isset($_SESSION["error"])){
+                        $error = $_SESSION["error"];
+                        echo "<span>$error</span>";
+                    }
+                ?>  
 
             <label for="inputName" class="sr-only">Nom</label>
             <input type="text" id="inputName" class="form-control mb-2" name="name" placeholder="Nom" required
@@ -40,9 +48,13 @@
             <input class="btn btn-lg btn-danger btn-block" type="submit" value="S' inscrire">
 
 
-            <p class="mt-2 mb-3">Déjà inscrit ? <a href="#">Connexion</a></p>
+            <p class="mt-2 mb-3">Déjà inscrit ? <a href="index.php">Connexion</a></p>
         </form>
     </div>
+
+    <?php
+    unset($_SESSION["error"]);
+    ?>
 
 <?php $content = ob_get_clean(); ?>
 <?php require('template.php'); ?>

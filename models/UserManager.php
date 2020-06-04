@@ -37,7 +37,7 @@ class UserManager extends Connection
             $req = $db->prepare('SELECT COUNT (username) FROM users WHERE username = ?');
             $req->execute(array($username));
             $user= $req->fetch();
-
+            
             return $user;
         
         }catch(PDOException $e){
@@ -49,6 +49,8 @@ class UserManager extends Connection
     {
         try 
         {
+            $error='Mot de passe ou utilisateur incorrect';
+
             $db=$this->dbConnect();
             $req= $db->prepare('SELECT * FROM users WHERE username=?');
             $req->execute(array($username));
@@ -62,7 +64,9 @@ class UserManager extends Connection
                 $_SESSION['user_username']=$login['username'];
                 return $login;
          } else {
-             return false;
+             session_start();
+             $_SESSION['error'] =  $error;
+             
          }
         
         }catch(PDOException $e){
