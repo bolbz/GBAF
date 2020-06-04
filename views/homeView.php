@@ -1,9 +1,15 @@
+<?php session_start();?>
+
 <?php 
     $title = 'Acceuil';
     $style = "Home" ;
 ?>
 
 <?php ob_start(); ?>
+
+<section>
+  <?= include_once'header.php';?>
+</section>
 
 <section>
     <div class="card">

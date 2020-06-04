@@ -5,6 +5,8 @@ class UserManager extends Connection
 {
     public function registerUser($name, $lastname, $username, $password, $question, $answer )
     {
+       try {
+
         $new_password = password_hash($password, PASSWORD_DEFAULT);
         $db = $this->dbConnect();
 
@@ -19,28 +21,52 @@ class UserManager extends Connection
         $register = $req->execute();
 
         return $register;
+    
+    }catch(PDOException $e){
+        echo $e->getMessage();
     }
+
+    }
+
 
     public function findUserUsername($username) 
     {
-        $db = $this->dbConnect();
-        $req = $db->prepare('SELECT COUNT (username) FROM users WHERE username = ?');
-        $req->execute(array($username));
-        $user= $req->fetch();
+        try 
+        {
+            $db = $this->dbConnect();
+            $req = $db->prepare('SELECT COUNT (username) FROM users WHERE username = ?');
+            $req->execute(array($username));
+            $user= $req->fetch();
 
-        return $user;
+            return $user;
+        
+        }catch(PDOException $e){
+            echo $e->getMessage();
+        }
     }
 
     public function login($username, $password)
     {
-        $db=$this->dbConnect();
-        $req= $db->prepare('SELECT * FROM users WHERE username=?');
-         $req->execute(array($username));
-         $login = $req->fetch(PDO::FETCH_ASSOC);
+        try 
+        {
+            $db=$this->dbConnect();
+            $req= $db->prepare('SELECT * FROM users WHERE username=?');
+            $req->execute(array($username));
+            $login = $req->fetch(PDO::FETCH_ASSOC);
 
-         if(password_verify($password, $login['password'])) {
-
-             return $login;
+            if(password_verify($password, $login['password'])) {
+                session_start();
+                $_SESSION['user_id']=$login['id'];
+                $_SESSION['user_name']=$login['name'];
+                $_SESSION['user_lastname']=$login['lastname']; 
+                $_SESSION['user_username']=$login['username'];
+                return $login;
+         } else {
+             return false;
          }
+        
+        }catch(PDOException $e){
+            echo $e->getMessage();
+        }
     }
 }

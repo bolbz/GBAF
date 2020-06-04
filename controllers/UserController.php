@@ -21,11 +21,11 @@ function login($username, $password)
     $userManager = new UserManager();
     
     $loginUser = $userManager->login($username, $password);
-
+    
     if($loginUser == false) {
         Header('Location: index.php');
     }
-    else{
+    else{     
         Header('Location: index.php?action=listPartners');
     }
 }
@@ -34,3 +34,4 @@ function affichage()
 {
     require('views/connection.php');
 }
+

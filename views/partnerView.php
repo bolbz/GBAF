@@ -1,7 +1,13 @@
+<?php session_start();?>
+
 <?php $title = htmlspecialchars($partner['name']); ?>
 <?php $style = 'Partner'; ?>
 
 <?php ob_start(); ?>
+
+<section>
+  <?= include_once'header.php';?>
+</section>
 
 <section>
         <div class="container-fluid">
@@ -10,7 +16,7 @@
                     <img src="<?= htmlspecialchars($partner['logo']) ?>" class="card-img-top" alt="...">
                 </div>
                 <div class="card-body">
-                    <p><a href="index.php" class="btn btn-outline-danger"><-- Retour à la liste des partenaire.</a></p>
+                    <p><a href="index.php?action=listPartners" class="btn btn-outline-danger"><-- Retour à la liste des partenaire.</a></p>
                     <h2 class="card-title">
                         <?= htmlspecialchars($partner['name']) ?>
                     </h2>
