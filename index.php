@@ -2,6 +2,7 @@
 ini_set('display_errors', 'On');
 require('controllers/PartnerController.php');
 require('controllers/UserController.php');
+require('controllers/CommentController.php');
 
 
 try
@@ -37,6 +38,15 @@ try
         elseif($_GET['action'] == 'registerUser') {
             if(!empty($_POST['name']) && !empty($_POST['lastname']) && !empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['question']) && !empty($_POST['answer'])) {
                 newUser($_POST['name'], $_POST['lastname'], $_POST['username'], $_POST['password'] ,$_POST['question'], $_POST['answer']);
+            }
+            else{
+                throw new Exception('Tous les champs ne sont pas remplis !');
+            }
+        }
+        elseif($_GET['action'] == 'postComment') {
+            if(!empty($_POST['author']) && !empty($_POST['comment']) && !empty($_POST['user_id']) && !empty($_POST['partner_id'])) {
+                newComment($_POST['author'], $_POST['comment'], $_POST['user_id'], $_POST['partner_id']);
+                
             }
             else{
                 throw new Exception('Tous les champs ne sont pas remplis !');

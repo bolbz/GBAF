@@ -9,9 +9,9 @@
             <img class="mb-4" src="public/images/logo.png" alt="logo-GBAF">
             <h1 class="h3 mb-3 font-weight-normal">Inscription</h1>
 
-            <?php
+                <?php
                     if(isset($_SESSION["error"])){
-                        $error = $_SESSION["error"];
+                        $error = $_SESSION["error"];   // Message d'erreur
                         echo "<span>$error</span>";
                     }
                 ?>  
