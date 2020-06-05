@@ -1,6 +1,7 @@
 <?php
 
 require_once('models/CommentManager.php');
+require_once('models/PartnerManager.php');
 
 function newComment($author, $comment, $user_id, $partner_id)
 {
@@ -20,3 +21,5 @@ function newComment($author, $comment, $user_id, $partner_id)
         header('Location: index.php?action=partner&id='.$partner_id);
     }
 }
+
+

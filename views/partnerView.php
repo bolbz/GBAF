@@ -1,4 +1,5 @@
-<?php session_start();?>
+<?php session_start(); ?>
+
 
 <?php $title = htmlspecialchars($partner['name']); ?>
 <?php $style = 'Partner'; ?>
@@ -35,7 +36,7 @@
                     <div class="btn-toolbar justify-content-between" role="toolbar"
                         aria-label="Toolbar with button groups">
                         <div class="input-group">
-                            <h5>X COMMENTAIRES</h5>
+                            <h5><?=count($getComments) ?> COMMENTAIRES</h5>
                         </div>
                         <div class="btn-group" role="group" aria-label="First group">
                             <button type="button" class="btn btn-primary mr-4" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Nouveau commentaire</button>
@@ -102,34 +103,22 @@
                         }
                     ?>
 
+                    <?php
+                    foreach($getComments as $value ) 
+                    {
+                    ?>
                     <div class="list-group">
-                        <div class="list-group-item list-group-item-action">
+                        <div class="list-group-item list-group-item-action mb-2">
                             <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1"><strong>Prénom : </strong> Unny</h5>
-                                <small><strong>3 days ago</strong></small>
+                                <h5 class="mb-1"><strong>Prénom : </strong><?= htmlspecialchars($value['author']) ?></h5>
+                                <small><strong><?= $value['comment_date'] ?></strong></small>
                             </div>
-                            <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget
-                                risus varius blandit.</p>
-                            </div>
-                        <div class="list-group-item list-group-item-action">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1">Prénom : Mike</h5>
-                                <small class="text-muted">3 days ago</small>
-                            </div>
-                            <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget
-                                risus varius blandit.</p>
-
-                        </div>
-                        <div class="list-group-item list-group-item-action">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1">Prénom : Bolbz</h5>
-                                <small class="text-muted">3 days ago</small>
-                            </div>
-                            <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget
-                                risus varius blandit.</p>
-
+                            <p class="mb-1"><?= nl2br(htmlspecialchars($value['comment'])) ?></p>
                             </div>
                     </div>
+                    <?php
+                     }
+                     ?>
                 </div>
             </div>
         </div>
