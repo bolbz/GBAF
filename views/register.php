@@ -20,11 +20,11 @@
             <input type="text" id="inputName" class="form-control mb-2" name="name" placeholder="Nom" required
                 autofocus>
 
-                <label for="inputLastName" class="sr-only">Prénom</label>
+            <label for="inputLastName" class="sr-only">Prénom</label>
             <input type="text" id="inputLastName" class="form-control mb-2" name="lastname" placeholder="Prénom" required
                 autofocus>
 
-                <label for="inputUsername" class="sr-only">Nom d'utilisateur</label>
+            <label for="inputUsername" class="sr-only">Nom d'utilisateur</label>
             <input type="text" id="inputUsername" class="form-control mb-2" name="username" placeholder="Nom d'utilisateur" required
                 autofocus>
 

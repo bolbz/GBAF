@@ -73,4 +73,30 @@ class UserManager extends Connection
             echo $e->getMessage();
         }
     }
+
+    function findUserById($username)
+    {
+        $db=$this->dbConnect();
+        $req= $db->prepare('SELECT * FROM users WHERE username=?');
+        $req->execute(array($username));
+        $user = $req->fetch(PDO::FETCH_ASSOC);
+        return $user;
+    }
+
+    function forgotPassword($id, $password)
+    {
+        try
+        {
+            $new_password = password_hash($password, PASSWORD_DEFAULT);
+            $db=$this->dbConnect();
+            $req= $db->prepare("UPDATE users SET password='$new_password' WHERE id='$id' ");
+            $update = $req->execute();
+
+            return $update;
+                   
+        }catch(PDOException $e){
+            echo $e->getMessage();
+        }
+
+    }
 }

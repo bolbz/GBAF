@@ -32,6 +32,7 @@ try
 
         elseif($_GET['action'] == 'logout') { //Déconnexion de la session
             session_start();
+            unset($_SESSION);
             session_destroy();
             connect();
         }
@@ -40,11 +41,26 @@ try
             register();
         }
 
+        elseif($_GET['action'] == 'forgot') { //Page mot de passe oublié
+            require('views/forgotPassword.php');
+        }
+
         elseif($_GET['action'] == 'registerUser') {  //Formulaire d'inscription
             if(!empty($_POST['name']) && !empty($_POST['lastname']) && !empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['question']) && !empty($_POST['answer'])) {
                 newUser($_POST['name'], $_POST['lastname'], $_POST['username'], $_POST['password'] ,$_POST['question'], $_POST['answer']);
             }
             else{
+                throw new Exception('Tous les champs ne sont pas remplis !');
+            }
+        }
+
+        elseif($_GET['action'] == 'forgotPassword') {  //Formulaire mot de passe oublié
+            if(!empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['question']) && !empty($_POST['answer'])) {
+                forgot( $_POST['username'], $_POST['password'],$_POST['question'],  $_POST['answer']);
+                
+            }
+            else{
+                var_dump(forgot( $_POST['username'], $_POST['question'], $_POST['answer'], $_POST['password'] ));
                 throw new Exception('Tous les champs ne sont pas remplis !');
             }
         }

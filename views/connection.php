@@ -27,7 +27,7 @@
 
             <input class="btn btn-lg btn-danger btn-block" type="submit" value="Se connecter">
 
-            <p class="mt-4 mb-3">Mot de passe <a href="#">oublié ?</a></p>
+            <p class="mt-4 mb-3">Mot de passe <a href="index.php?action=forgot">oublié ?</a></p>
             <p class="mt-2 mb-3">Pas encore de compte ? <a href="index.php?action=register">Inscription</a></p>
             
         </form>

@@ -33,6 +33,33 @@ function login($username, $password)
     }
 }
 
+
+function forgot($username,$password, $question, $answer)
+{
+    $userManager = new UserManager();
+    $error = 'récupération impossible';
+    $success = 'changement effectué';
+
+    $findUser = $userManager->findUserById($username);
+
+    
+    if($findUser == true && $findUser['question']=== $question && $findUser['answer']=== $answer) {
+        $id=$findUser['id'];
+        $changePassword = $userManager->forgotPassword($id, $password);
+
+
+        session_start();
+        $_SESSION['success'] = $success;
+        require('views/forgotPassword.php');
+
+    }else{
+        session_start();
+        $_SESSION['error'] = $error;
+        require('views/forgotPassword.php');
+    }
+}
+
+
 function connect()
 {
     require('views/connection.php');
