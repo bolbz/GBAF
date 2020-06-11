@@ -62,6 +62,9 @@ class UserManager extends Connection
                 $_SESSION['user_name']=$login['name'];
                 $_SESSION['user_lastname']=$login['lastname']; 
                 $_SESSION['user_username']=$login['username'];
+                $_SESSION['user_password']=$password;
+                $_SESSION['user_question']=$login['question'];
+                $_SESSION['user_answer']=$login['answer'];
                 return $login;
          } else {
              session_start();
@@ -98,5 +101,21 @@ class UserManager extends Connection
             echo $e->getMessage();
         }
 
+    }
+
+    function updateUser($id, $name, $lastname, $username, $password, $question, $answer)
+    {
+        try
+        {
+            $update_password= password_hash($password, PASSWORD_DEFAULT);
+            $db = $this->dbConnect();
+            $req = $db->prepare("UPDATE users SET name='$name', lastname='$lastname', username='$username', password = '$update_password', question='$question', answer='$answer' WHERE id='$id' ");
+            $update= $req->execute();
+
+            return $update;
+        }
+        catch(PDOException $e){
+            echo $e->getMessage();
+        }
     }
 }

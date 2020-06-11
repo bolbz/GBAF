@@ -22,4 +22,12 @@ function newComment($author, $comment, $user_id, $partner_id)
     }
 }
 
+function param()
+{
+    $commentManager = new CommentManager();
+    $nbComment= $commentManager->nbCommentsByUser($_GET['id']);
+
+    require('views/userParam.php');
+}
+
 

@@ -31,5 +31,22 @@ class CommentManager extends Connection {
         catch(PDOException $e){
             echo $e->getMessage();
         }
-    } 
+    }
+
+    public function nbCommentsByUser($user_id)
+    {
+        try{
+            $db = $this->dbConnect();
+            $req= $db->prepare("SELECT * FROM comments WHERE user_id='$user_id'");
+            $req->execute(array($user_id));
+
+            $nb= $req->fetchAll();
+            return $nb;
+        }
+        catch(PDOException $e){
+            echo $e->getMessage();
+        }
+    }
+
+    
 }

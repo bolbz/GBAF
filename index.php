@@ -40,6 +40,17 @@ try
         elseif($_GET['action'] == 'register') { //Page inscription
             register();
         }
+        elseif($_GET['action'] == 'param') { //Page paramètres
+           param();
+        }
+        elseif($_GET['action'] == 'updateUser') { //formulaire paramètres du compte    
+            if(!empty($_POST['id']) &&!empty($_POST['name']) && !empty($_POST['lastname']) && !empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['question']) && !empty($_POST['answer'])) {
+                updateInfos($_POST['id'],$_POST['name'], $_POST['lastname'], $_POST['username'], $_POST['password'] ,$_POST['question'], $_POST['answer']);
+            }
+            else{
+                throw new Exception('Tous les champs ne sont pas remplis !');
+            }
+        }
 
         elseif($_GET['action'] == 'forgot') { //Page mot de passe oublié
             require('views/forgotPassword.php');

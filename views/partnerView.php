@@ -61,7 +61,7 @@
                                     <form method="post" action="index.php?action=postComment">
                                         <div class="form-group">
                                             <label for="author" class="col-form-label">Nom d'utilisateur : </label>
-                                            <input type="text" class="form-control" name="author" id="author" value="<?php echo $username ?>" readonly>
+                                            <input type="text" class="form-control" name="author" id="author" value="<?= $username ?>" readonly>
                                         </div>
                                         <div class="form-group">
                                             <label for="comment" class="col-form-label">Message:</label>

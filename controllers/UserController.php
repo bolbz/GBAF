@@ -59,6 +59,24 @@ function forgot($username,$password, $question, $answer)
     }
 }
 
+function updateInfos($id, $name, $lastname, $username, $password, $question, $answer)
+{
+    $userManager = new UserManager();
+    $success = 'modifications réussi';
+    $error = 'echec des modifications';
+
+    $updateInfos = $userManager->updateUser($id, $name, $lastname, $username, $password, $question, $answer);
+
+    if($updateInfos){
+        session_start();
+        $_SESSION['success'] = $success;
+        Header('Location : index.php?action=param&id='.$id);
+    } else {
+        session_start();
+        $_SESSION['error'] = $error;
+        Header('Location : index.php?action=param&id='.$id);
+    }
+}
 
 function connect()
 {

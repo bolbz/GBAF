@@ -11,7 +11,7 @@
                             <?= $_SESSION['user_name'] . ' ' . $_SESSION['user_lastname']; ?>
                         </a>                  
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <a class="dropdown-item" href="#">paramètre du compte</a>
+                            <a class="dropdown-item" href="index.php?action=param&id=<?= $_SESSION['user_id']?>">paramètre du compte</a>
                         </div>
                     </li>
                     <li class="nav-item"><a class="nav-link" href="index.php?action=logout"><i style='font-size:18px' class='fas'>&#xf2f6;</i> se déconnecter</a></li>
