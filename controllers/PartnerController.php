@@ -21,3 +21,12 @@ function partner()
 
     require('views/partnerView.php');
 }
+
+function liked($user_id, $partner_id, $value)
+{
+    $partnerManager = new PartnerManager;
+
+    $like=$partnerManager->likes($user_id,$partner_id,$value);
+
+    Header('Location: index.php?action=partner&id='.$partner_id);
+}

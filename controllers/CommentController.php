@@ -2,6 +2,7 @@
 
 require_once('models/CommentManager.php');
 require_once('models/PartnerManager.php');
+require_once('models/UserManager.php');
 
 function newComment($author, $comment, $user_id, $partner_id)
 {
@@ -24,8 +25,11 @@ function newComment($author, $comment, $user_id, $partner_id)
 
 function param()
 {
+    $userManager = new UserManager();
     $commentManager = new CommentManager();
     $nbComment= $commentManager->nbCommentsByUser($_GET['id']);
+    $nbLike = $userManager->getLike($_GET['id']);
+    $nbDislike = $userManager->getDislike($_GET['id']);
 
     require('views/userParam.php');
 }

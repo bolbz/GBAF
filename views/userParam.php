@@ -1,4 +1,6 @@
-<?php session_start(); ?>
+<?php session_start(); 
+var_dump($nbDislike);
+?>
 <?php $title='Paramètre du compte' ; ?>
 <?php $style ='Home' ; ?>
 
@@ -21,8 +23,8 @@
                 <ul class="list-group mt-3">
                     <li class="list-group-item active">Activités <i class="fas fa-chart-line"></i></li>
                     <li class="list-group-item list-group-item-info text-right"><span class="pull-left"><i class="far fa-comments"></i><strong> Commentaires: </strong></span><?=count($nbComment) ?></li>
-                    <li class=" list-group-item list-group-item-success text-right"><span class="pull-left"><i class="far fa-thumbs-up"></i><strong> Likes: </strong></span> 13</li>
-                    <li class="list-group-item list-group-item-danger text-right"><span class="pull-left"><i class="far fa-thumbs-down"></i><strong> Dislike: </strong></span> 37</li>
+                    <li class=" list-group-item list-group-item-success text-right"><span class="pull-left"><i class="far fa-thumbs-up"></i><strong> Likes: </strong></span><?= htmlspecialchars(count($nbLike))?></li>
+                    <li class="list-group-item list-group-item-danger text-right"><span class="pull-left"><i class="far fa-thumbs-down"></i><strong> Dislike: </strong></span><?= htmlspecialchars(count($nbDislike))?></li>
                 </ul>     
             </div>
 
@@ -107,7 +109,7 @@
                             <div class="form-group">
                                 <div class="col-xs-12">
                                     <button class="btn btn-lg btn-outline-danger" type="submit"><i class="glyphicon glyphicon-ok-sign"></i>Enregister modifications</button>
-                                    <button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Retour à l'accueil</button>
+                                    <a class="btn btn-lg" href='index.php?action=listPartners'><i class="glyphicon glyphicon-repeat"></i> Retour à l'accueil</button>
                                 </div>
                             </div>
                         </form>

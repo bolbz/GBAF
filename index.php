@@ -71,7 +71,6 @@ try
                 
             }
             else{
-                var_dump(forgot( $_POST['username'], $_POST['question'], $_POST['answer'], $_POST['password'] ));
                 throw new Exception('Tous les champs ne sont pas remplis !');
             }
         }
@@ -79,6 +78,24 @@ try
         elseif($_GET['action'] == 'postComment') { // ajout du commentaire
             if(!empty($_POST['author']) && !empty($_POST['comment']) && !empty($_POST['user_id']) && !empty($_POST['partner_id'])) {
                 newComment($_POST['author'], $_POST['comment'], $_POST['user_id'], $_POST['partner_id']);
+                
+            }
+            else{
+                throw new Exception('Tous les champs ne sont pas remplis !');
+            }
+        }
+        elseif($_GET['action'] == 'like') {  //Formulaire like
+            if(!empty($_POST['user_id']) && !empty($_POST['partner_id']) && !empty($_POST['value'])) {
+                liked( $_POST['user_id'], $_POST['partner_id'],$_POST['value']);
+                
+            }
+            else{
+                throw new Exception('Tous les champs ne sont pas remplis !');
+            }
+        }
+        elseif($_GET['action'] == 'dislike') {  //Formulaire dislike
+            if(!empty($_POST['user_id']) && !empty($_POST['partner_id']) && !empty($_POST['value'])) {
+                liked( $_POST['user_id'], $_POST['partner_id'],$_POST['value']);
                 
             }
             else{

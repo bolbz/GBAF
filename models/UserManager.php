@@ -118,4 +118,34 @@ class UserManager extends Connection
             echo $e->getMessage();
         }
     }
+
+    function getLike($user_id)
+    {
+        try
+        {
+            $db=$this->dbConnect();
+            $req=$db->prepare("SELECT * FROM votes WHERE user_id='$user_id' AND value = 1");
+            $req->execute();
+            $like = $req->fetchAll();
+            return $like;
+        }
+        catch(PDOException $e){
+            echo $e->getMessage();
+        }
+    }
+
+    function getDislike($user_id)
+    {
+        try
+        {
+            $db=$this->dbConnect();
+            $req=$db->prepare("SELECT * FROM votes WHERE user_id='$user_id' AND value = -1");
+            $req->execute();
+            $like = $req->fetchAll();
+            return $like;
+        }
+        catch(PDOException $e){
+            echo $e->getMessage();
+        }
+    }
 }

@@ -40,10 +40,20 @@
                         </div>
                         <div class="btn-group" role="group" aria-label="First group">
                             <button type="button" class="btn btn-primary mr-4" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Nouveau commentaire</button>
-                            <button type="button" class="btn btn-success mr-1">3 <i style="font-size:20px"
-                                    class="fa">&#xf087;</i></button>
-                            <button type="button" class="btn btn-danger">4 <i style="font-size:20px"
-                                    class="fa">&#xf088;</i></button>
+
+                            <form method="post" action="index.php?action=like">
+                                <input type="hidden" name="user_id" value="<?= $_SESSION['user_id']?>">
+                                <input type="hidden" name="partner_id" value="<?= htmlspecialchars($partner['id'])?>">
+                                <input type="hidden" name="value" value="1">
+                                <button type="submit" class="btn btn-success mr-1"><?= htmlspecialchars($partner['like_count'])?> <i class="far fa-thumbs-up"></i></button>
+                            </form>
+
+                            <form method="post" action="index.php?action=dislike">
+                                <input type="hidden" name="user_id" value="<?= $_SESSION['user_id']?>">
+                                <input type="hidden" name="partner_id" value="<?= htmlspecialchars($partner['id'])?>">
+                                <input type="hidden" name="value" value="-1">
+                                <button type="submit" class="btn btn-danger"><?= htmlspecialchars($partner['dislike_count'])?> <i class="far fa-thumbs-down"></i></button>
+                            </form>
                         </div>
 
                         <!-- Modal new Comment -->
