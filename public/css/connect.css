@@ -43,12 +43,12 @@ body {
   border-top-right-radius: 0;
 }
 
-img{
+.logo_gbaf{
     width: 300px;
     height: 300px;
 }
 @media (max-width: 640px){
-    img{
+    .logo_gbaf{
         width: 150px;
         height: 150px;
     }
@@ -57,3 +57,32 @@ img{
 p{
     color: black;
 }
+
+/*------<Partie Header ----*/
+
+@media (max-width: 768px) {
+  .menu {
+      display: flex;
+      justify-content: center;
+  }
+   .rounded{
+      width: 600px;
+      height: 100px;
+  }
+  .nav{
+      display: block;
+  }
+  .dropdown-toggle{
+      padding-left: 50px;
+  }
+  }
+  .header{
+      background-color: #ddd7d7;
+  }
+  .header a{
+      color: red;
+  }
+  .rounded{
+      width: 50px;
+      height: 50px;
+  }

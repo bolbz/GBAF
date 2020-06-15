@@ -21,31 +21,3 @@
     </div>
 </header>
 
-<style>
-    @media (max-width: 768px) {
-    .menu {
-        display: flex;
-        justify-content: center;
-    }
-     .rounded{
-        width: 600px;
-        height: 100px;
-    }
-    .nav{
-        display: block;
-    }
-    .dropdown-toggle{
-        padding-left: 50px;
-    }
-    }
-    .header{
-        background-color: #ddd7d7;
-    }
-    .header a{
-        color: red;
-    }
-    .rounded{
-        width: 50px;
-        height: 50px;
-    }
-</style>

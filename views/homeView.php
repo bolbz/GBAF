@@ -14,7 +14,7 @@
 <section>
     <div class="card">
       <div class="card-body">
-        <h1 class="card-title">Gbaf</h1>
+        <h1 class="card-title title">GBAF</h1>
         <p class="card-text">Le Groupement Banque Assurance Français​ (GBAF) est une fédération
           représentant les 6 grands groupes français :
         </p>
@@ -37,15 +37,40 @@
             pouvoirs publics.
           </p>
      </div>
-      <img src="public/images/bannierre.jpg" class="card-img-top" alt="image_header" style="height:200px;">
    </div>
+   <div class="container text-center my-3">
+    <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
+        <div class="carousel-inner w-100" role="listbox">
+            <div class="carousel-item row no-gutters active">
+                <div class="col-3 float-left thumbnail"><img class="img-fluid w-50" src="public/images/banque/banquePostale.png"></div>
+                <div class="col-3 float-left thumbnail"><img class="img-fluid w-50" src="public/images/banque/bnp.png"></div>
+                <div class="col-3 float-left thumbnail"><img class="img-fluid w-50" src="public/images/banque/bpce.png"></div>
+                <div class="col-3 float-left thumbnail"><img class="img-fluid w-50" src="public/images/banque/cic.jpg"></div>
+
+            </div>
+            <div class="carousel-item row no-gutters">
+            <div class="col-3 float-left thumbnail"><img class="img-fluid w-50" src="public/images/banque/credit_agricole.jpg"></div>
+                <div class="col-3 float-left thumbnail"><img class="img-fluid w-50" src="public/images/banque/credit_mutuelle.png"></div>
+                <div class="col-3 float-left thumbnail"><img class="img-fluid w-50" src="public/images/banque/s_g.jpg"></div>
+                <div class="col-3 float-left thumbnail"><img class="img-fluid w-50" src="public/images/banque/banquePostale.png">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#recipeCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#recipeCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
 </section>
 
   <!--section entreprises-->
   <section class="enterprise">
     <div class="card border-light mb-3">
-      <div class="card-header">
-        <h2>Nos Partenaires</h2>
+      <div class="card-header ">
+        <h2 class="title_S">Nos Partenaires</h2>
       </div>
       <div class="card-body">
         <p class="card-text">
@@ -67,7 +92,7 @@
               <div class="partner-card row">
               <div class="col-md-5 img-padding-no">
                 <div class="partner-logo">
-                  <img src="<?= htmlspecialchars($data['logo']) ?>" alt=" <?= htmlspecialchars($data['name']) ?>">
+                  <img class="img_partner" src="<?= htmlspecialchars($data['logo']) ?>" alt=" <?= htmlspecialchars($data['name']) ?>">
                 </div>
               </div>
               <div class="col-md-7">
@@ -94,6 +119,10 @@
       </div>
     </div>
   </section>
+
+  <section>
+  <?php include_once'footer.php';?>
+</section>
  
   <?php $content = ob_get_clean(); ?>
 

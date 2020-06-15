@@ -2,7 +2,7 @@
 
 
 <?php $title = htmlspecialchars($partner['name']); ?>
-<?php $style = 'Partner'; ?>
+<?php $style = 'Home'; ?>
 <?php $username = $_SESSION['user_username']?>
 <?php ob_start(); ?>
 
@@ -11,7 +11,7 @@
 </section>
 
 <section>
-        <div class="container-fluid">
+        <div class="container partner">
             <div class="card mb-3">
                 <div class="text-center">
                     <img src="<?= htmlspecialchars($partner['logo']) ?>" class="card-img-top" alt="...">
@@ -30,7 +30,7 @@
     </section>
 
     <section> <!-- Section Commentaire -->
-        <div class="container-fluid">
+        <div class="container comments">
             <div class="card">
                 <div class="card-header">
                     <div class="btn-toolbar justify-content-between" role="toolbar"
@@ -133,6 +133,9 @@
             </div>
         </div>
     </section>
+    
+        <?php include_once 'footer.php'?>
+   
 
     
     <?php

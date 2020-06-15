@@ -12,16 +12,10 @@
     <?php
           if($style == 'Home') {
             echo '<link rel="stylesheet" href="public/css/home.css" media="screen" type="text/css" /> ';
-          }
-          elseif($style == 'Partner') {
-            echo '<link rel="stylesheet" href="public/css/partners.css" media="screen" type="text/css" /> ';
-          }
-          elseif($style == 'Connect') {
+          }else {
             echo '<link rel="stylesheet" href="public/css/connect.css" media="screen" type="text/css" /> ';
           }
-          else {
-            echo '<link rel="stylesheet" href="/public/css/home.php" media="screen" type="text/css" />';
-          }
+
           ?>
     <title><?= $title; ?></title>
   </head>

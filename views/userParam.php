@@ -1,6 +1,4 @@
-<?php session_start(); 
-var_dump($nbDislike);
-?>
+<?php session_start();?>
 <?php $title='Paramètre du compte' ; ?>
 <?php $style ='Home' ; ?>
 

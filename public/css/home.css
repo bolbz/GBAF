@@ -1,10 +1,15 @@
+body{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 22px;
+}
+
 .partner-card{
     background: #fff;
     border: 1px solid;
     border-color: #c7bdbd40;
     margin: 1rem auto;
     border-radius: 5px;
-    box-shadow: 0 4px 6px -1px rgb(198, 207, 234);
+    box-shadow: 0 4px 6px -1px red;
     margin-bottom: 1.6%;
     overflow: hidden;
     border: 2px solid red;
@@ -24,7 +29,20 @@
     background: #f1f4f5c7;
     border: 2px solid red;
   }
+
+  .title_S{
+    font-size: 40px;
+  }
+
+  .title{
+    font-size: 82px;
+  }
   
+  .card-header{
+
+    background-color: rgb(231, 45, 45);
+    color: white;
+  }
   @media (max-width: 768px) {
   
     .partner-logo {
@@ -38,23 +56,13 @@
     }
   }
   
- img{
+ .img_partner{
     background-size: cover;
     height: 100%;
     width: 100%;
   }
   
 
-  body{
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 22px;
-}
-@media (min-width: 1024px) {
-.enterprise {
-  width: 85%;
-  margin: auto;
-}
-}
 
 @media (max-width: 768px) {
   .menu {
@@ -62,3 +70,100 @@
       justify-content: center;
   }
   }
+
+
+ .enterprise .card-header{
+
+  border: 1px solid red;
+ }
+
+/*------<Partie Header ----*/
+
+@media (max-width: 768px) {
+  .menu {
+      display: flex;
+      justify-content: center;
+  }
+   .rounded{
+      width: 600px;
+      height: 100px;
+  }
+  .nav{
+      display: block;
+  }
+  .dropdown-toggle{
+      padding-left: 50px;
+  }
+  }
+  .header{
+      background-color: #ddd7d7;
+  }
+  .header a{
+      color: red;
+  }
+  .rounded{
+      width: 50px;
+      height: 50px;
+  }
+
+  /*------<Partie Footer ----*/
+
+  footer a {
+    color: black;
+    font-size: 18px;
+  }
+
+  /*------Partie partner----------*/
+
+  .card-img-top {
+    width: 90%;
+    height: 30%;
+    border: 2px solid red;
+    margin-top: 10px;
+}
+
+@media (min-width: 768px) {
+.card-img-top {
+    width: 50%;
+    height: 20%;
+    border: 2px solid red;
+    margin-top: 20px;
+}
+}
+
+.partner {
+    border: 2px solid red;
+    margin-bottom: 20px;
+    width: 85%;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.comments {
+    border: 2px solid red;
+    margin-bottom: 20px;
+    width: 85%;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+@media (max-width: 768px) {
+    button {
+        height: 50px;
+    }
+    .partner {
+        width: auto;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .comments {
+        width: auto;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+.list-group-item {
+    border: 1px solid red;
+    border-radius: 2px;
+}

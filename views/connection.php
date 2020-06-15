@@ -7,7 +7,7 @@
 <div class="container-fluid text-center">
         <form class="form-signin" method="post" action="index.php?action=login">
 
-            <img class="mb-4" src="./public/images/logo.png" alt="logo-GBAF">
+            <img class="mb-4 logo_gbaf" src="./public/images/logo.png" alt="logo-GBAF">
             <h1 class="h3 mb-3 font-weight-normal">Connexion</h1>
 
             <?php

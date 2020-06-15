@@ -18,18 +18,35 @@ body{
 }
 }
 
-.container-fluid {
+.partner {
     border: 2px solid red;
     margin-bottom: 20px;
     width: 85%;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.comments {
+    border: 2px solid red;
+    margin-bottom: 20px;
+    width: 85%;
+    padding-left: 0;
+    padding-right: 0;
 }
 
 @media (max-width: 768px) {
     button {
         height: 50px;
     }
-    .container-fluid {
+    .partner {
         width: auto;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .comments {
+        width: auto;
+        padding-left: 0;
+        padding-right: 0;
     }
 }
 
@@ -38,3 +55,31 @@ body{
     border-radius: 2px;
 }
 
+/*------<Partie Header ----*/
+
+@media (max-width: 768px) {
+    .menu {
+        display: flex;
+        justify-content: center;
+    }
+     .rounded{
+        width: 600px;
+        height: 100px;
+    }
+    .nav{
+        display: block;
+    }
+    .dropdown-toggle{
+        padding-left: 50px;
+    }
+    }
+    .header{
+        background-color: #ddd7d7;
+    }
+    .header a{
+        color: red;
+    }
+    .rounded{
+        width: 50px;
+        height: 50px;
+    }
