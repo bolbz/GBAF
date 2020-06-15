@@ -5,7 +5,7 @@ class Connection
         {
             try
             {
-                $db = new PDO('mysql:host=localhost;dbname=projet-gbaf;charset=utf8', 'root', 'agentcamion');
+                $db = new PDO('mysql:host=localhost;dbname=projet-gbaf;charset=utf8', 'root', '');
                 return $db;
              }
             catch(Exception $e)

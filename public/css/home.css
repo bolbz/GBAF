@@ -1,41 +1,51 @@
-.firma-card{
+body{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 22px;
+}
+
+.partner-card{
     background: #fff;
     border: 1px solid;
     border-color: #c7bdbd40;
     margin: 1rem auto;
     border-radius: 5px;
-    box-shadow: 0 4px 6px -1px rgb(198, 207, 234);
+    box-shadow: 0 4px 6px -1px red;
     margin-bottom: 1.6%;
     overflow: hidden;
     border: 2px solid red;
   }
-  .firma-resim{
+  .partner-logo{
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    background-size: cover;
-    background-position: center;
     transition: -webkit-transform .2s;
     transition: transform .2s;
-    /* background-image: url(https://storage.googleapis.com/chydlx/codepen/blog-cards/image-1.jpg); */
     margin: 10px;
     border: 1px solid red;
   }
-  .firmalar{
+  .partners{
     background: #f1f4f5c7;
     border: 2px solid red;
   }
+
+  .title_S{
+    font-size: 40px;
+  }
+
+  .title{
+    font-size: 82px;
+  }
   
+  .card-header{
+
+    background-color: rgb(231, 45, 45);
+    color: white;
+  }
   @media (max-width: 768px) {
   
-    .firma-logo{
-          width: calc(33.66667% - .75rem);
-          height: 6.5rem;
-          margin: 5px .375rem;
-    }
-    .firma-resim {
+    .partner-logo {
       position: relative;
       z-index: 0;
       height: 200px;
@@ -46,3 +56,114 @@
     }
   }
   
+ .img_partner{
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+  }
+  
+
+
+@media (max-width: 768px) {
+  .menu {
+      display: flex;
+      justify-content: center;
+  }
+  }
+
+
+ .enterprise .card-header{
+
+  border: 1px solid red;
+ }
+
+/*------<Partie Header ----*/
+
+@media (max-width: 768px) {
+  .menu {
+      display: flex;
+      justify-content: center;
+  }
+   .rounded{
+      width: 600px;
+      height: 100px;
+  }
+  .nav{
+      display: block;
+  }
+  .dropdown-toggle{
+      padding-left: 50px;
+  }
+  }
+  .header{
+      background-color: #ddd7d7;
+  }
+  .header a{
+      color: red;
+  }
+  .rounded{
+      width: 50px;
+      height: 50px;
+  }
+
+  /*------<Partie Footer ----*/
+
+  footer a {
+    color: black;
+    font-size: 18px;
+  }
+
+  /*------Partie partner----------*/
+
+  .card-img-top {
+    width: 90%;
+    height: 30%;
+    border: 2px solid red;
+    margin-top: 10px;
+}
+
+@media (min-width: 768px) {
+.card-img-top {
+    width: 50%;
+    height: 20%;
+    border: 2px solid red;
+    margin-top: 20px;
+}
+}
+
+.partner {
+    border: 2px solid red;
+    margin-bottom: 20px;
+    width: 85%;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.comments {
+    border: 2px solid red;
+    margin-bottom: 20px;
+    width: 85%;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+@media (max-width: 768px) {
+    button {
+        height: 50px;
+    }
+    .partner {
+        width: auto;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .comments {
+        width: auto;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+.list-group-item {
+    border: 1px solid red;
+    border-radius: 2px;
+}
