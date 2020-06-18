@@ -1,4 +1,11 @@
-<?php session_start();?>
+<?php 
+if(!isset($_SESSION['user_id'])){
+  session_start();
+} else {
+  header('Location: index.php');
+  exit;
+}
+?>
 <?php $title='Paramètre du compte' ; ?>
 <?php $style ='Home' ; ?>
 

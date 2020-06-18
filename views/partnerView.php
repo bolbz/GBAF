@@ -1,4 +1,11 @@
-<?php session_start(); ?>
+<?php 
+if(!isset($_SESSION['user_id'])){
+  session_start();
+} else {
+  header('Location: index.php');
+  exit;
+}
+?>
 
 
 <?php $title = htmlspecialchars($partner['name']); ?>
@@ -70,11 +77,11 @@
                                 <div class="modal-body">
                                     <form method="post" action="index.php?action=postComment">
                                         <div class="form-group">
-                                            <label for="author" class="col-form-label">Nom d'utilisateur : </label>
+                                            <label for="author" class="col-form-label labl">Nom d'utilisateur : </label>
                                             <input type="text" class="form-control" name="author" id="author" value="<?= $username ?>" readonly>
                                         </div>
                                         <div class="form-group">
-                                            <label for="comment" class="col-form-label">Message:</label>
+                                            <label for="comment" class="col-form-label labl">Message:</label>
                                             <textarea class="form-control" name="comment" id="comment" required></textarea>
                                         </div>
                                         <input type="hidden" name="user_id" value="<?= $_SESSION['user_id']?>">

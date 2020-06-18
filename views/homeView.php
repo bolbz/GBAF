@@ -1,4 +1,11 @@
-<?php session_start();?>
+<?php 
+if(!isset($_SESSION['user_id'])){
+  session_start();
+} else {
+  header('Location: index.php');
+  exit;
+}
+?>
 
 <?php 
     $title = 'Acceuil';
@@ -42,17 +49,17 @@
     <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
         <div class="carousel-inner w-100" role="listbox">
             <div class="carousel-item row no-gutters active">
-                <div class="col-3 float-left thumbnail"><img class="img-fluid w-50" src="public/images/banque/banquePostale.png"></div>
-                <div class="col-3 float-left thumbnail"><img class="img-fluid w-50" src="public/images/banque/bnp.png"></div>
-                <div class="col-3 float-left thumbnail"><img class="img-fluid w-50" src="public/images/banque/bpce.png"></div>
-                <div class="col-3 float-left thumbnail"><img class="img-fluid w-50" src="public/images/banque/cic.jpg"></div>
+                <div class="col-3 float-left thumbnail"><img class="img-fluid w-50" alt="logo_Postal" src="public/images/banque/banquePostale.png"></div>
+                <div class="col-3 float-left thumbnail"><img class="img-fluid w-50" alt="logo_BNP" src="public/images/banque/bnp.png"></div>
+                <div class="col-3 float-left thumbnail"><img class="img-fluid w-50" alt="logo_BPCE" src="public/images/banque/bpce.png"></div>
+                <div class="col-3 float-left thumbnail"><img class="img-fluid w-50" alt="logo_CIC" src="public/images/banque/cic.jpg"></div>
 
             </div>
             <div class="carousel-item row no-gutters">
-            <div class="col-3 float-left thumbnail"><img class="img-fluid w-50" src="public/images/banque/credit_agricole.jpg"></div>
-                <div class="col-3 float-left thumbnail"><img class="img-fluid w-50" src="public/images/banque/credit_mutuelle.png"></div>
-                <div class="col-3 float-left thumbnail"><img class="img-fluid w-50" src="public/images/banque/s_g.jpg"></div>
-                <div class="col-3 float-left thumbnail"><img class="img-fluid w-50" src="public/images/banque/banquePostale.png">
+            <div class="col-3 float-left thumbnail"><img class="img-fluid w-50" alt="logo_CA" src="public/images/banque/credit_agricole.jpg"></div>
+                <div class="col-3 float-left thumbnail"><img class="img-fluid w-50" alt="logo_CM" src="public/images/banque/credit_mutuelle.png"></div>
+                <div class="col-3 float-left thumbnail"><img class="img-fluid w-50" alt="logo_SG" src="public/images/banque/s_g.jpg"></div>
+                <div class="col-3 float-left thumbnail"><img class="img-fluid w-50" alt="logo_BP" src="public/images/banque/banquePostale.png">
             </div>
         </div>
         <a class="carousel-control-prev" href="#recipeCarousel" role="button" data-slide="prev">
@@ -63,7 +70,9 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
         </a>
+      </div>
     </div>
+   </div>
 </section>
 
   <!--section entreprises-->

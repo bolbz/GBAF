@@ -61,6 +61,7 @@ body{
     .menu {
         display: flex;
         justify-content: center;
+        text-align: center;
     }
      .rounded{
         width: 600px;

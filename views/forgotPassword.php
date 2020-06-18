@@ -13,7 +13,7 @@
 
 <div class="container-fluid text-center">
     <form class="form-signin" method="post" action="index.php?action=forgotPassword">
-        <img class="mb-4" src="public/images/logo.png" alt="logo-GBAF">
+        <img class="mb-4 logo_gbaf" src="public/images/logo.png" alt="logo-GBAF">
         <h1 class="h3 mb-3 font-weight-normal">Changer le mot de passe</h1>
 
             <?php

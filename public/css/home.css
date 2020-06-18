@@ -68,6 +68,7 @@ body{
   .menu {
       display: flex;
       justify-content: center;
+      text-align: center;
   }
   }
 
@@ -166,4 +167,13 @@ body{
 .list-group-item {
     border: 1px solid red;
     border-radius: 2px;
+}
+
+.modal-header {
+  color: black;
+  background-color: lightcoral;
+}
+
+.labl{
+  color: black;
 }
