@@ -46,7 +46,7 @@ if(!isset($_SESSION['user_id'])){
                             <h5><?=count($getComments) ?> COMMENTAIRES</h5>
                         </div>
                         <div class="btn-group" role="group" aria-label="First group">
-                            <button type="button" class="btn btn-primary mr-4" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Nouveau commentaire</button>
+                            <button type="button" class="btn btn-primary mr-4 new_comment" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Nouveau Commentaire</button>
 
                             <form method="post" action="index.php?action=like">
                                 <input type="hidden" name="user_id" value="<?= $_SESSION['user_id']?>">
